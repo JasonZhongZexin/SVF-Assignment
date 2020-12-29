@@ -1,26 +1,37 @@
-## 1. Install SVF and its dependence (LLVM pre-built binary) via npm
-```
-npm i --silent svf-lib --prefix ${HOME}
-```
+# Control Flow Reachability Assignment
+In this assignment, you are requested to complete a function which will output the path between the source node and sink node.
 
-## 2. Clone repository
-```
-git clone <https clone url of the assignment repository>
-```
+## 1. Setup the assignment environment 
+This assignment requested the supports of the svf library. To compile the execuateable, you need to setup the svf library on your device. 
 
-## 3. Setup SVF environment
-```
-source ./env.sh
-```
 
-## 4. Coding and build your solution
-```
-./build.sh
-```
+<summary> Install svf-lib using npm (tested on both Ubuntu and MacOS)</summary>
+<pre><code>npm i --silent svf-lib --prefix ${HOME}</pre></code>
+ 
 
-## 5. Submit your solution
+After the svf-lib has been installed, you can run the **env. sh** script which is in your assignment folder to setup the environment.
+<pre><code>source ./env.sh</pre></code>
+
+While the environment has been setup, you are now able to start your assignment.
+
+## 2. Coding your solution
+For this assignment, you are requested to design a function which will query all reachable paths between the source and sink function.
 ```
-git add .
-git commit -m'<your commit message>'
+src() is the source function.
+sink() is the sink function.
+```
+## 3. Build and submit your solution
+Your submission requests 2 components which are your solution codes and the execuateable file of your solution.   
+
+Once you complete the assignment, you need to run the **build. sh** script. This script will build your solution automatically and generate the execuateable file which called **svf-ex**.
+<pre><code>./build.sh</pre></code>
+
+Finally, you are requested to commit and push your code and the execuateable file via the git command.
+```
+git add <source code and the execuateable file>
+git commit -m'<commit message>'
 git push
 ```
+*Note: It is important to submit the execuateable file. Otherwise, your submission will not be marked by the system.*
+
+After the submission, you work will be automatically mark by the system and you are able to checked your mark at the assignment github repository.
