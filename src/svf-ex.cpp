@@ -63,25 +63,6 @@ int main(int argc, char ** argv) {
     pag = builder.build (svfModule);
     pag->dump ("pag");
 
-    /// Create Andersen's pointer analysis
-    Andersen *ander = AndersenWaveDiff::createAndersenWaveDiff (pag);
-
-    /// Call Graph
-    PTACallGraph *callgraph = ander->getPTACallGraph ();
-    callgraph->dump ("callgraph");
-
-    /// ICFG
-    ICFG *icfg = pag->getICFG ();
-    icfg->dump ("icfg");
-
-    /// Value-Flow Graph (VFG)
-    VFG *vfg = new VFG (callgraph);
-    vfg->dump ("vfg");
-
-    /// Sparse value-flow graph (SVFG)
-    SVFGBuilder svfBuilder;
-    SVFG *svfg = svfBuilder.buildFullSVFGWithoutOPT (ander);
-    svfg->dump ("svfg");
 
     return 0;
 }
